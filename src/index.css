@@ -2,6 +2,7 @@ body {
   font-family: sans-serif;
   line-height: 1.5;
   margin: 0;
+  background-color: #effef2;
 }
 
 *,
@@ -30,4 +31,24 @@ ol {
 img {
   display: block;
   max-width: 100%;
+}
+
+.container {
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 15px;
+  }
+}
+
+@media screen and (min-width: 1156px) {
+  .container {
+    max-width: 1156px;
+    padding: 0 15px;
+  }
 }
