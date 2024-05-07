@@ -1,11 +1,10 @@
 import css from "./App.module.css";
 import { useEffect } from "react";
-import { fetchContacts } from "../../redux/contactsOps";
+import { fetchContacts } from "../../redux/contacts/operations";
 import { useDispatch } from "react-redux";
+import { Routes, Route } from "react-router-dom";
 
-import ContactForm from "../contact-form/ContactForm";
-import SearchBox from "../search-box/SearchBox";
-import ContactList from "../contact-list/ContactList";
+import HomePage from "../../pages/home-page/HomePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,10 +15,9 @@ function App() {
 
   return (
     <div className={css.appContainer}>
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <SearchBox />
-      <ContactList />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
     </div>
   );
 }
