@@ -20,6 +20,9 @@ const ContactList = () => {
       {loading && <Loader />}
       {error && <Error errorMessage={error} />}
       <ul className={css.contactList}>
+        {filteredContacts.length === 0 && loading === false && (
+          <p>You have no contacts yet. You can add them through the form.</p>
+        )}
         {filteredContacts.map(contact => {
           return <Contact contact={contact} key={contact.id} />;
         })}

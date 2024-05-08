@@ -1,7 +1,4 @@
 // import css from "./App.module.css";
-// import { useEffect } from "react";
-// import { fetchContacts } from "../../redux/contacts/operations";
-// import { useDispatch } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 import { PrivateRoute } from "../PrivateRoute";
 import { RestrictedRoute } from "../RestrictedRoute";
@@ -13,12 +10,6 @@ import LoginPage from "../../pages/login-page/LoginPage";
 import ContactsPage from "../../pages/contacts-page/ContactsPage";
 
 function App() {
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
-
   return (
     <Layout>
       <Routes>

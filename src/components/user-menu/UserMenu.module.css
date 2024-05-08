@@ -1,0 +1,10 @@
+.userMenuWrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.greetingMessage {
+  font-size: 20px;
+  color: #ffffff;
+}

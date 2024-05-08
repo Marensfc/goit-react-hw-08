@@ -16,9 +16,33 @@ export const register = createAsyncThunk(
   async (userData, thunkApi) => {
     try {
       const response = await axios.post("/users/signup", userData);
+      setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
       thunkApi.rejectWithValue(error.message);
     }
   }
 );
+
+export const login = createAsyncThunk(
+  "auth/login",
+  async (userData, thunkApi) => {
+    try {
+      const response = await axios.post("/users/login", userData);
+      setAuthHeader(response.data.token);
+      return response.data;
+    } catch (error) {
+      thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const logout = createAsyncThunk("auth/logout", async (_, thunkApi) => {
+  try {
+    const response = await axios.post("/users/logout");
+    console.log(response.data);
+    clearAuthHeader();
+  } catch (error) {
+    thunkApi.rejectWithValue(error.message);
+  }
+});
