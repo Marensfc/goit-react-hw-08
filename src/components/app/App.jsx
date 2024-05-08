@@ -4,9 +4,10 @@ import { fetchContacts } from "../../redux/contacts/operations";
 import { useDispatch } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 
-import Layout from "../layout/Layout";
+import Layout from "../Layout";
 import HomePage from "../../pages/home-page/HomePage";
-import AppBar from "../app-bar/AppBar";
+import RegisterPage from "../../pages/register-page/RegisterPage";
+import LoginPage from "../../pages/login-page/LoginPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,14 +17,13 @@ function App() {
   }, [dispatch]);
 
   return (
-    <>
-      <AppBar />
-      {/* <Layout> */}
+    <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
-      {/* </Layout> */}
-    </>
+    </Layout>
   );
 }
 

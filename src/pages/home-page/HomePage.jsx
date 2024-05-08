@@ -1,5 +1,7 @@
+import css from "./HomePage.module.css";
+
 const HomePage = () => {
-  return <h1>Welcome to home page!</h1>;
+  return <h1 className={css.homePageTitle}>Welcome to home page!</h1>;
 };
 
 export default HomePage;
