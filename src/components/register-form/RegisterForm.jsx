@@ -50,10 +50,15 @@ const RegisterForm = () => {
       onSubmit={handleSubmit}
       validationSchema={registerSchema}
     >
-      <Form>
-        <div>
+      <Form className={css.form}>
+        <div className={css.fieldWrapper}>
           <label htmlFor={fieldNameId}>Name</label>
-          <Field name="name" placeholder="Name" id={fieldNameId} />
+          <Field
+            name="name"
+            placeholder="Name"
+            id={fieldNameId}
+            className={css.inputField}
+          />
           <ErrorMessage
             name="name"
             component="p"
@@ -61,13 +66,14 @@ const RegisterForm = () => {
           />
         </div>
 
-        <div>
+        <div className={css.fieldWrapper}>
           <label htmlFor={fieldEmailId}>Email</label>
           <Field
             type="email"
             name="email"
             id={fieldEmailId}
             placeholder="Email"
+            className={css.inputField}
           />
           <ErrorMessage
             name="email"
@@ -76,13 +82,14 @@ const RegisterForm = () => {
           />
         </div>
 
-        <div>
+        <div className={css.fieldWrapper}>
           <label htmlFor={fieldPasswordId}>Password</label>
           <Field
             type="password"
             name="password"
             id={fieldPasswordId}
             placeholder="Password"
+            className={css.inputField}
           />
           <ErrorMessage
             name="password"
@@ -91,7 +98,9 @@ const RegisterForm = () => {
           />
         </div>
 
-        <button type="submit">Register</button>
+        <button type="submit" className={css.buttonRegister}>
+          Register
+        </button>
       </Form>
     </Formik>
   );

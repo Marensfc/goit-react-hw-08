@@ -10,6 +10,10 @@ import Contact from "../contact/Contact";
 import Loader from "../loader/Loader";
 import Error from "../error/Error";
 
+{
+  /* <p>You have no contacts yet. You can add them through the form.</p> */
+}
+
 const ContactList = () => {
   const filteredContacts = useSelector(selectFilteredContacts);
   const loading = useSelector(selectLoading);
@@ -20,9 +24,6 @@ const ContactList = () => {
       {loading && <Loader />}
       {error && <Error errorMessage={error} />}
       <ul className={css.contactList}>
-        {filteredContacts.length === 0 && loading === false && (
-          <p>You have no contacts yet. You can add them through the form.</p>
-        )}
         {filteredContacts.map(contact => {
           return <Contact contact={contact} key={contact.id} />;
         })}

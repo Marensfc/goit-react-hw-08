@@ -1,4 +1,4 @@
-// import css from "./LoginForm.module.css";
+import css from "./LoginForm.module.css";
 import { Formik, Form, Field } from "formik";
 import { useId } from "react";
 import { useDispatch } from "react-redux";
@@ -32,16 +32,28 @@ const LoginForm = () => {
       onSubmit={handleSubmit}
       validationSchema={loginSchema}
     >
-      <Form>
-        <div>
+      <Form className={css.form}>
+        <div className={css.fieldWrapper}>
           <label htmlFor={fieldEmailId}>Email</label>
-          <Field type="email" name="email" id={fieldEmailId} />
+          <Field
+            type="email"
+            name="email"
+            id={fieldEmailId}
+            className={css.inputField}
+          />
         </div>
-        <div>
+        <div className={css.fieldWrapper}>
           <label htmlFor={fieldPasswordId}>Password</label>
-          <Field type="password" name="password" id={fieldPasswordId} />
+          <Field
+            type="password"
+            name="password"
+            id={fieldPasswordId}
+            className={css.inputField}
+          />
         </div>
-        <button type="submit">Log In</button>
+        <button type="submit" className={css.buttonLogin}>
+          Log In
+        </button>
       </Form>
     </Formik>
   );
