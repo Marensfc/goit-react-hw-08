@@ -15,6 +15,11 @@ const contactsInitialState = {
 const contactsSlice = createSlice({
   name: "contacts",
   initialState: contactsInitialState,
+  reducers: {
+    clearContacts: (state, action) => {
+      state.items = action.payload;
+    },
+  },
   extraReducers: builder => {
     builder
       .addMatcher(
@@ -43,3 +48,4 @@ const contactsSlice = createSlice({
 });
 
 export const contactsReducer = contactsSlice.reducer;
+export const { clearContacts } = contactsSlice.actions;
