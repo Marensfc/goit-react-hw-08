@@ -10,8 +10,8 @@ const UserMenu = () => {
   const user = useSelector(selectUser);
 
   const handleLogout = () => {
-    dispatch(logout());
     dispatch(clearContacts([]));
+    dispatch(logout());
   };
 
   return (
