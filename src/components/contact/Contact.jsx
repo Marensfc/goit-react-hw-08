@@ -28,7 +28,6 @@ const Contact = ({
       <button type="button" onClick={handleDelete}>
         Delete
       </button>
-      <button type="button">Change</button>
     </li>
   );
 };
