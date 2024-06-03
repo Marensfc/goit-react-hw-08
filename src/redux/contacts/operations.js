@@ -38,3 +38,17 @@ export const deleteContact = createAsyncThunk(
     }
   }
 );
+
+export const updateContact = createAsyncThunk(
+  "contacts/updateContact",
+  async (contact, thunkApi) => {
+    const body = { name: contact.name, number: contact.number };
+    try {
+      axios.patch(`/contacts/${contact.id}`, { data: body });
+      const response = await axios.get("/contacts");
+      return response.data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);

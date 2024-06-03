@@ -8,12 +8,13 @@ import { deleteContact } from "../../redux/contacts/operations";
 
 Modal.setAppElement("#root");
 
-const ConfirmModal = ({ isOpen, closeModal, contactId }) => {
+const ConfirmModal = ({ isOpen, closeModal, contactId, setContactId }) => {
   const dispatch = useDispatch();
 
   const handleConfirmDelete = () => {
     closeModal();
     dispatch(deleteContact(contactId));
+    setContactId(null);
   };
 
   return (

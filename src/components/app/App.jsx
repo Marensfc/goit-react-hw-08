@@ -22,6 +22,8 @@ function App() {
     dispatch(refreshUser());
   }, [dispatch]);
 
+  console.log(isRefreshing);
+
   return (
     <Layout>
       {isRefreshing ? (

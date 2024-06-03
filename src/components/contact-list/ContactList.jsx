@@ -39,6 +39,7 @@ const ContactList = () => {
           isOpen={isOpen}
           closeModal={closeModal}
           contactId={contactId}
+          setContactId={setContactId}
         />
       </ul>
     </>
