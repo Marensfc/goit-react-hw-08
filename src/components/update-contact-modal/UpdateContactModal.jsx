@@ -2,7 +2,7 @@ import css from "./UpdateContactModal.module.css";
 import Modal from "react-modal";
 
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import { useId } from "react";
 
 Modal.setAppElement("#root");
