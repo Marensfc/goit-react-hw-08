@@ -17,7 +17,7 @@ const ContactList = () => {
   const filteredContacts = useSelector(selectFilteredContacts);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
-  const { isOpen, openModal, closeModal } = useModal();
+  const { confirmModal } = useModal("confirmModal");
   const [contactId, setContactId] = useState(null);
 
   return (
@@ -30,14 +30,14 @@ const ContactList = () => {
             <Contact
               contact={contact}
               key={contact.id}
-              openModal={openModal}
+              openModal={confirmModal.openModal}
               setContactId={setContactId}
             />
           );
         })}
         <ConfirmModal
-          isOpen={isOpen}
-          closeModal={closeModal}
+          isOpen={confirmModal.isOpen}
+          closeModal={confirmModal.closeModal}
           contactId={contactId}
           setContactId={setContactId}
         />
