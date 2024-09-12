@@ -1,4 +1,3 @@
-// import css from "./App.module.css";
 import { Routes, Route } from "react-router-dom";
 import { PrivateRoute } from "../PrivateRoute";
 import { RestrictedRoute } from "../RestrictedRoute";

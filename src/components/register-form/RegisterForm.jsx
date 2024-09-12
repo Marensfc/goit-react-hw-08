@@ -17,7 +17,7 @@ const registerSchema = yup.object().shape({
     .string()
     .trim()
     .min(2, "Must be at least 2 characters")
-    .max(15, "Must be no more than 15 characters")
+    .max(18, "Must be no more than 18 characters")
     .required("Name is a required field"),
   email: yup
     .string()
